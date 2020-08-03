@@ -4,7 +4,7 @@ app = FastAPI()
 
 
 @app.post("/files/")
-def main():
-    return str('Hello World!! ')
+async def main(file: bytes = File(...)):
+    return {"file_size": len(file)}
 
 
